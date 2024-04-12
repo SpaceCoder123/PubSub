@@ -61,5 +61,5 @@ jobs:
         with:
           app-name: 'pubSubClient'
           slot-name: 'Production'
-          package: ./Solution/pubsub-client/build
+          package: .Solution/pubsub-client/build
           
