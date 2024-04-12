@@ -23,6 +23,7 @@ jobs:
 
       - name: npm install, build, and test
         run: |
+          cd Solution/pubsub-client/
           npm install
           npm run build --if-present
           npm run test --if-present
@@ -61,5 +62,5 @@ jobs:
         with:
           app-name: 'pubSubClient'
           slot-name: 'Production'
-          package: .Solution/pubsub-client/build
+          package: Solution/pubsub-client/build
           
