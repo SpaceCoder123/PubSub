@@ -23,7 +23,6 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          cd Solution/pubsub-client/
           npm install
           npm run build --if-present
           npm run test --if-present
@@ -32,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: node-app
-          path: Solution/pubsub-client/build
+          path: .
 
   deploy:
     runs-on: ubuntu-latest
@@ -62,5 +61,5 @@ jobs:
         with:
           app-name: 'pubSubClient'
           slot-name: 'Production'
-          package: Solution/pubsub-client/build
+          package: .
           
