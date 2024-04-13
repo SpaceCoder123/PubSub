@@ -1,0 +1,24 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/pubsub-client/node_modules
+/pubsub-client/.pnp
+/pubsub-client/.pnp.js
+
+# testing
+/pubsub-client/coverage
+
+# production
+# /build
+/PubSub/Publisher/bin
+PubSub/Publisher/.vs
+# misc
+pubsub-client/.DS_Store
+pubsub-client/.env.local
+pubsub-client/.env.development.local
+pubsub-client/.env.test.local
+pubsub-client/.env.production.local
+
+pubsub-client/npm-debug.log*
+pubsub-client/yarn-debug.log*
+pubsub-client/yarn-error.log*
