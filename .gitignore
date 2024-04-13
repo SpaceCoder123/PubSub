@@ -1,2 +1,23 @@
 
 *.vsidx
+*.cache
+*.v2
+Solution/PubSub/.vs/PubSub/v17/.suo
+Solution/PubSub/Publisher/appsettings.json
+Solution/PubSub/Publisher/obj/Debug/net6.0/Publisher.assets.cache
+Solution/PubSub/Publisher/obj/Debug/net6.0/Publisher.csproj.AssemblyReference.cache
+Solution/PubSub/Publisher/obj/project.assets.json
+Solution/PubSub/Publisher/obj/project.nuget.cache
+Solution/PubSub/Publisher/obj/Publisher.csproj.nuget.dgspec.json
+Solution/PubSub/.vs/PubSub/DesignTimeBuild/.dtbcache.v2
+Solution/PubSub/.vs/PubSub/v17/.suo
+Solution/PubSub/RepositoryLayer/obj/RepositoryLayer.csproj.nuget.dgspec.json
+Solution/PubSub/RepositoryLayer/obj/project.nuget.cache
+Solution/PubSub/RepositoryLayer/obj/project.assets.json
+Solution/PubSub/RepositoryLayer/obj/Debug/net6.0/RepositoryLayer.assets.cache
+Solution/PubSub/Subscriber/obj/Debug/net6.0/Subscriber.csproj.AssemblyReference.cache
+Solution/PubSub/Subscriber/obj/Debug/net6.0/Subscriber.assets.cache
+Solution/PubSub/Subscriber/obj/project.nuget.cache
+Solution/PubSub/Subscriber/obj/project.assets.json
+Solution/PubSub/Subscriber/obj/Subscriber.csproj.nuget.dgspec.json
+/Solution/PubSub/.vs/PubSub/v17/.suo

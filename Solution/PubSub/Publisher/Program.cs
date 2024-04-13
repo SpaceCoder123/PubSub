@@ -1,3 +1,5 @@
+using RepositoryLayer;
+
 namespace Publisher
 {
     public class Program
@@ -11,6 +13,7 @@ namespace Publisher
             builder.Services.AddControllers();
             builder.Services.AddSwaggerGen();
             builder.Services.AddScoped<PublisherExceptionFilter>();
+            builder.Services.AddSingleton<DbConnectionLayer>();
 
             var app = builder.Build();
 

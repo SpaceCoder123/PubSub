@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "IPAslEoL+II2ehKWLiyXrzp18lwiQKwWbPw7jbtwwMj2osdBB2mDi3QrBHAErAy0z8pQb7njyknx7CAee09b6A==",
+  "dgSpecHash": "Lt9ITV87qAWChHMxr96+PkuFD4+sek8FNJQWm+nl2p/sq9A+IvmZFf8Rnd+SXbTgkmDSAcD4rCAisBkuTQA3jg==",
   "success": true,
   "projectFilePath": "E:\\PubSub\\Solution\\PubSub\\Subscriber\\Subscriber.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\mohan\\.nuget\\packages\\dapper\\2.1.44\\dapper.2.1.44.nupkg.sha512",
     "C:\\Users\\mohan\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\mohan\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\mohan\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
