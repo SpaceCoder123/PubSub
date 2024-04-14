@@ -23,14 +23,17 @@ jobs:
 
       - name: Change directory to API project
         run: cd Solution/PubSub
-
+        
       - name: Restore dependencies
+        working-directory: Solution/PubSub/Publisher   # Specify the directory containing your .csproj file
         run: dotnet restore
 
       - name: Build with dotnet
+        working-directory: Solution/PubSub/Publisher   # Specify the same directory for consistency
         run: dotnet build --configuration Release
 
       - name: dotnet publish
+        working-directory: Solution/PubSub/Publisher   # Specify the same directory for consistency
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job

@@ -1,0 +1,15 @@
+E:\PubSub\Solution\PubSub\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.deps.json
+E:\PubSub\Solution\PubSub\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.dll
+E:\PubSub\Solution\PubSub\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.pdb
+E:\PubSub\Solution\PubSub\RepositoryLayer\bin\Debug\net6.0\Entities.dll
+E:\PubSub\Solution\PubSub\RepositoryLayer\bin\Debug\net6.0\Entities.pdb
+E:\PubSub\Solution\PubSub\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.csproj.AssemblyReference.cache
+E:\PubSub\Solution\PubSub\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\PubSub\Solution\PubSub\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.AssemblyInfoInputs.cache
+E:\PubSub\Solution\PubSub\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.AssemblyInfo.cs
+E:\PubSub\Solution\PubSub\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.csproj.CoreCompileInputs.cache
+E:\PubSub\Solution\PubSub\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.csproj.CopyComplete
+E:\PubSub\Solution\PubSub\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.dll
+E:\PubSub\Solution\PubSub\RepositoryLayer\obj\Debug\net6.0\refint\RepositoryLayer.dll
+E:\PubSub\Solution\PubSub\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.pdb
+E:\PubSub\Solution\PubSub\RepositoryLayer\obj\Debug\net6.0\ref\RepositoryLayer.dll
