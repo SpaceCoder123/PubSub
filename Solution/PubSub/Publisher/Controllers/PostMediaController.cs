@@ -1,6 +1,7 @@
 ﻿using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Services.Interfaces;
+using System.Transactions;
 
 namespace Publisher.Controllers
 {
@@ -16,11 +17,11 @@ namespace Publisher.Controllers
             _publisherService = publisherService;
             _auditService = auditService;
         }
-        [Route("PostMedia")]
         [HttpPost]
-        public async Task<IActionResult> PostMedia(MediaSongDTO mediaSongDTO)
+        public async Task<IActionResult> PostMedia(MediaSongDTO mediaSongDTO, [FromHeader] Guid TransactionId)
         {
-            var output = await _auditService.InsertMediaAudit(mediaSongDTO, "RecievedPayloadInPublisher");
+            mediaSongDTO.TransactionId = TransactionId;
+            await _auditService.InsertMediaAudit(mediaSongDTO, "RecievedPayloadInPublisher");
             var isSongInserted = await _publisherService.InsertPlayableMedia(mediaSongDTO);
             if(isSongInserted) 
             {

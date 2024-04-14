@@ -21,8 +21,7 @@ namespace Services
         public async Task<bool> InsertPlayableMedia(MediaSongDTO mediaSongDTO)
         {
             await _auditService.InsertMediaAudit(mediaSongDTO, "ProcessingInPublisher");
-            MediaSongEntity entity = _mapper.Map<MediaSongEntity>(mediaSongDTO);
-            return await _publisherRepository.InsertSong(entity);
+            return await _publisherRepository.InsertSong(mediaSongDTO);
         }
     }
 }

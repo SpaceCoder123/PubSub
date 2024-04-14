@@ -14,5 +14,4 @@ namespace Common
             return mapperConfiguration.CreateMapper();
         }
     }
-    }
 }

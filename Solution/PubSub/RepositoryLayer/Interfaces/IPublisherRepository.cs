@@ -3,6 +3,6 @@ namespace RepositoryLayer.Interfaces
 {
     public interface IPublisherRepository
     {
-        public Task<bool> InsertSong(MediaSongEntity mediaSongEntity);
+        public Task<bool> InsertSong(MediaSongDTO mediaSong);
     }
 }

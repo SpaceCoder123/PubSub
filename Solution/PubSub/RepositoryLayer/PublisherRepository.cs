@@ -14,22 +14,25 @@ namespace RepositoryLayer
             _connectionLayer = connectionLayer;
         }
 
-        public async Task<bool> InsertSong(MediaSongEntity mediaSongEntity)
+        public async Task<bool> InsertSong(MediaSongDTO mediaSongDTO)
         {
             using (IDbConnection connection = _connectionLayer.CreateConnection())
             {
                 var parameters = new DynamicParameters();
 
-                parameters.Add("Title", mediaSongEntity.Title);
-                parameters.Add("Artist", mediaSongEntity.Artist);
-                parameters.Add("Album", mediaSongEntity.Album);
-                parameters.Add("GenreType", mediaSongEntity.GenreType);
-                parameters.Add("ReleaseDate", mediaSongEntity.ReleaseDate);
-                parameters.Add("CreatedOn", mediaSongEntity.CreatedOn);
-                parameters.Add("CreatedBy", mediaSongEntity.CreatedBy);
+                parameters.Add("Title", mediaSongDTO.Title);
+                parameters.Add("Artist", mediaSongDTO.Artist);
+                parameters.Add("Album", mediaSongDTO.Album);
+                parameters.Add("Duration", mediaSongDTO.Duration);
+                parameters.Add("GenreType", mediaSongDTO.GenreType);
+                parameters.Add("ReleaseDate", mediaSongDTO.ReleaseDate);
+                parameters.Add("CreatedOn", mediaSongDTO.CreatedOn);
+                parameters.Add("CreatedBy", mediaSongDTO.CreatedBy);
+                parameters.Add("RowCount", dbType: DbType.Int32, direction: ParameterDirection.Output);
 
                 connection.Open();
-                var rowCountChange = await connection.ExecuteAsync("[dbo].[pubsub_addData]", parameters, commandType: CommandType.StoredProcedure);
+                await connection.ExecuteAsync("[dbo].[pubsub_addData]", parameters, commandType: CommandType.StoredProcedure);
+                int rowCountChange = parameters.Get<int>("RowCount");
                 connection.Close();
                 return rowCountChange > 0;
             }

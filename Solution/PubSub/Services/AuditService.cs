@@ -3,8 +3,6 @@ using Entities;
 using Newtonsoft.Json;
 using RepositoryLayer.Interfaces;
 using Services.Interfaces;
-using System.Text.Json.Serialization;
-
 namespace Services
 {
     public class AuditService : IAuditService
@@ -20,10 +18,22 @@ namespace Services
         {
             var audit = new Audit
             {
-                TransactionId = mediaSongDTO.TransactionId,
+                TransactionId = mediaSongDTO.TransactionId.ToString(),
                 AuditType = auditType,
                 Code = 200,
                 Payload = JsonConvert.SerializeObject(mediaSongDTO)
+            };
+            return await _auditRepository.AddAudit(audit); ;
+        }
+
+        public async Task<bool> InsertExceptionAudit(string stackTrace, string TransactionId, string auditType)
+        {
+            var audit = new Audit
+            {
+                TransactionId = TransactionId,
+                AuditType = auditType,
+                Code = 200,
+                Payload = stackTrace
             };
             return await _auditRepository.AddAudit(audit); ;
         }
