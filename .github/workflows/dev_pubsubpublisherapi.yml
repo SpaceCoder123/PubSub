@@ -1,12 +1,11 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy ASP.Net Core app to Azure Web App - pubsubpublisherapi
+name: Build and deploy .NET Web API to Azure Web App - pubsubpublisherapi
 
 on:
   push:
     branches:
       - dev
+    paths:
+      - 'Solution/PubSub/Publisher/**'
   workflow_dispatch:
 
 jobs:
@@ -22,6 +21,12 @@ jobs:
           dotnet-version: '6.0.x'
           include-prerelease: true
 
+      - name: Change directory to API project
+        run: cd Solution/PubSub/Publisher
+
+      - name: Restore dependencies
+        run: dotnet restore
+
       - name: Build with dotnet
         run: dotnet build --configuration Release
 
@@ -29,10 +34,10 @@ jobs:
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
-          name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+          name: .net-web-api
+          path: Solution/PubSub/Publisher/bin/Release/net6.0/publish
 
   deploy:
     runs-on: windows-latest
@@ -45,9 +50,10 @@ jobs:
 
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v2
         with:
-          name: .net-app
+          name: .net-web-api
+          path: Solution/PubSub/Publisher
       
       - name: Login to Azure
         uses: azure/login@v1
@@ -62,5 +68,4 @@ jobs:
         with:
           app-name: 'pubsubpublisherapi'
           slot-name: 'Production'
-          package: .
-          
+          package: Solution/PubSub/Publisher
