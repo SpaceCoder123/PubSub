@@ -1,4 +1,4 @@
-name: Build and deploy .NET Web API to Azure Web App - pubsubpublisherapi
+name: Build and deploy ASP.NET Core Web API to Azure Web App - pubsubpublisherapi
 
 on:
   push:
@@ -39,7 +39,7 @@ jobs:
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
-          name: .net-web-api
+          name: aspnet-core-web-api
           path: Solution/PubSub/Publisher/bin/Release/net6.0/publish
 
   deploy:
@@ -55,7 +55,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
         with:
-          name: .net-web-api
+          name: aspnet-core-web-api
           path: Solution/PubSub/Publisher/bin/Release/net6.0/publish
       
       - name: Login to Azure
