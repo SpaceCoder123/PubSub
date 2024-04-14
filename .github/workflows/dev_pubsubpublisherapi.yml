@@ -22,7 +22,7 @@ jobs:
           include-prerelease: true
 
       - name: Change directory to API project
-        run: cd Solution/PubSub/Publisher
+        run: cd Solution/PubSub
 
       - name: Restore dependencies
         run: dotnet restore

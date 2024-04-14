@@ -1,0 +1,11 @@
+E:\PubSub\Solution\PubSub\Entities\bin\Release\net6.0\Entities.deps.json
+E:\PubSub\Solution\PubSub\Entities\bin\Release\net6.0\Entities.dll
+E:\PubSub\Solution\PubSub\Entities\bin\Release\net6.0\Entities.pdb
+E:\PubSub\Solution\PubSub\Entities\obj\Release\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+E:\PubSub\Solution\PubSub\Entities\obj\Release\net6.0\Entities.AssemblyInfoInputs.cache
+E:\PubSub\Solution\PubSub\Entities\obj\Release\net6.0\Entities.AssemblyInfo.cs
+E:\PubSub\Solution\PubSub\Entities\obj\Release\net6.0\Entities.csproj.CoreCompileInputs.cache
+E:\PubSub\Solution\PubSub\Entities\obj\Release\net6.0\Entities.dll
+E:\PubSub\Solution\PubSub\Entities\obj\Release\net6.0\refint\Entities.dll
+E:\PubSub\Solution\PubSub\Entities\obj\Release\net6.0\Entities.pdb
+E:\PubSub\Solution\PubSub\Entities\obj\Release\net6.0\ref\Entities.dll
