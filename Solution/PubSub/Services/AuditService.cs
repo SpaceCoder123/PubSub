@@ -1,18 +1,16 @@
-﻿using AutoMapper;
-using Entities;
+﻿using Entities;
 using Newtonsoft.Json;
 using RepositoryLayer.Interfaces;
 using Services.Interfaces;
+
 namespace Services
 {
     public class AuditService : IAuditService
     {
         private IAuditRepository _auditRepository;
-        private IMapper _mapper;
-        public AuditService(IAuditRepository auditRepository, IMapper mapper)
+        public AuditService(IAuditRepository auditRepository)
         {
             _auditRepository = auditRepository;
-            _mapper = mapper;
         }
         public async Task<bool> InsertMediaAudit(MediaSongDTO mediaSongDTO, string auditType)
         {

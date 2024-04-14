@@ -1,4 +1,5 @@
 ﻿using Entities;
+
 namespace RepositoryLayer.Interfaces
 {
     public interface IPublisherRepository

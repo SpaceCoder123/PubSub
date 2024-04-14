@@ -9,12 +9,10 @@ namespace Services
     public class PublisherService : IPublisherService
     {
         private IPublisherRepository _publisherRepository;
-        private IMapper _mapper;
         private IAuditService _auditService;
-        public PublisherService(IPublisherRepository publisherRepository, IMapper mapper, IAuditService auditService)
+        public PublisherService(IPublisherRepository publisherRepository, IAuditService auditService)
         {
             _publisherRepository = publisherRepository;
-            _mapper = mapper;
             _auditService = auditService;
         }
 

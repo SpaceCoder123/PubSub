@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Services;
 using Services.Interfaces;
 
 public class PublisherExceptionFilter : IExceptionFilter
@@ -39,5 +38,4 @@ public class PublisherExceptionFilter : IExceptionFilter
         context.Result = result;
         context.ExceptionHandled = true;
     }
-
 }
