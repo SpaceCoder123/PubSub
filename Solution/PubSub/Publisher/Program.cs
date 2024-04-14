@@ -1,4 +1,8 @@
 using RepositoryLayer;
+using RepositoryLayer.Interfaces;
+using Common;
+using Services.Interfaces;
+using Services;
 
 namespace Publisher
 {
@@ -8,16 +12,18 @@ namespace Publisher
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-
             builder.Services.AddControllers();
             builder.Services.AddSwaggerGen();
             builder.Services.AddScoped<PublisherExceptionFilter>();
             builder.Services.AddSingleton<DbConnectionLayer>();
+            builder.Services.AddTransient<IPublisherRepository, PublisherRepository>();
+            builder.Services.AddTransient<IPublisherService, PublisherService>();
+            builder.Services.AddTransient<IAuditRepository, AuditRepository>();
+            builder.Services.AddTransient<IAuditService, AuditService>();
 
+            builder.Services.AddAutoMapper(typeof(Program));
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             app.UseCors(options =>
             {
                 options.WithOrigins("https://pubsubclient.azurewebsites.net", "http://localhost:3000")

@@ -10,7 +10,7 @@ namespace RepositoryLayer
 
         public DbConnectionLayer(IConfiguration configuration)
         {
-            _connectionString = configuration.GetConnectionString("YourConnectionStringName");
+            _connectionString = configuration.GetConnectionString("DefaultConnection");
         }
 
         public IDbConnection CreateConnection()

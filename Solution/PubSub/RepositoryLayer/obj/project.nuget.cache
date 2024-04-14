@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "2ULQBkioc7LkWYPZ0f+m+qJL6XoehlwdwU4qCv7HPC61832GBEKeyvDmPqDNfxQDBE0RCIFHGdhQm1m8j6Xlfw==",
+  "dgSpecHash": "oDQiEn1+4VcC/l/4h3QdBz4HGVxnA566D41kZyE2MkksD/Q/w9+Zv2Oy0lb6Lsf02lDpNubOsgQfJMzDvOTkGw==",
   "success": true,
   "projectFilePath": "E:\\PubSub\\Solution\\PubSub\\RepositoryLayer\\RepositoryLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mohan\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\mohan\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\mohan\\.nuget\\packages\\dapper\\2.1.44\\dapper.2.1.44.nupkg.sha512",
     "C:\\Users\\mohan\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\mohan\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\mohan\\.nuget\\packages\\microsoft.data.sqlclient\\5.2.0\\microsoft.data.sqlclient.5.2.0.nupkg.sha512",
