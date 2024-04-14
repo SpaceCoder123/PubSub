@@ -12,7 +12,10 @@ namespace Publisher
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddControllers();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new() { Title = "Publisher API", Version = "v1" });
+            });
             builder.Services.AddScoped<PublisherExceptionFilter>();
             builder.Services.AddSingleton<DbConnectionLayer>();
             builder.Services.AddTransient<IPublisherRepository, PublisherRepository>();
@@ -21,7 +24,11 @@ namespace Publisher
             builder.Services.AddTransient<IAuditService, AuditService>();
 
             builder.Services.AddAutoMapper(typeof(Program));
+
             var app = builder.Build();
+
+            app.UseHttpsRedirection();
+            app.UseAuthorization();
 
             app.UseCors(options =>
             {
@@ -32,18 +39,10 @@ namespace Publisher
             });
 
             app.UseExceptionHandler("/publisher/error");
-            app.UseHttpsRedirection();
-            app.UseAuthorization();
-            
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-
+            app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+                options.SwaggerEndpoint("../swagger/v1/swagger.json", "v1");
             });
 
             app.MapControllers();

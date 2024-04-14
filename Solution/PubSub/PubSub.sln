@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryLayer", "Reposito
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{4B85EE2C-72B9-4BEB-9527-80FE69B8C0FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{39129FC2-2485-4B5E-B81C-0AA0D63202F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{39129FC2-2485-4B5E-B81C-0AA0D63202F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{6B804B67-0AD5-4609-BB19-15533E71D202}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{6B804B67-0AD5-4609-BB19-15533E71D202}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
