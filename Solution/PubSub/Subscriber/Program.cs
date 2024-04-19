@@ -1,3 +1,7 @@
+using RepositoryLayer;
+using RepositoryLayer.Interfaces;
+using Services;
+using Services.Interfaces;
 using Subscriber.Filters;
 
 namespace Subscriber
@@ -13,22 +17,29 @@ namespace Subscriber
             builder.Services.AddControllers();
             builder.Services.AddSwaggerGen();
             builder.Services.AddScoped<SubscriberExceptionFilter>();
+            builder.Services.AddTransient<DbConnectionLayer>();
+            builder.Services.AddTransient<ISubscriberRepository, SubscriberRepository>();
+            builder.Services.AddTransient<ISubscriberService, SubscriberService>();
+            builder.Services.AddTransient<IAuditRepository, AuditRepository>();
+            builder.Services.AddTransient<IAuditService, AuditService>();
 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
 
             app.UseHttpsRedirection();
+            app.UseCors(options =>
+            {
+                options.WithOrigins("https://pubsubclient.azurewebsites.net", "http://localhost:3000")
+                       .AllowAnyMethod()
+                       .AllowAnyHeader()
+                       .AllowCredentials();
+            });
 
             app.UseAuthorization();
 
             app.UseExceptionHandler("/subscriber/error");
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-
+            app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");

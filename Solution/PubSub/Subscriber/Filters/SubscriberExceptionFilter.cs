@@ -15,8 +15,14 @@ namespace Subscriber.Filters
         public void OnException(ExceptionContext context)
         {
             _logger.LogError(context.Exception, "An unhandled exception occurred.");
+            string StackTrace = context.Exception.StackTrace;
+            var errorResponse = new
+            {
+                message = StackTrace,
+                StatusCode = 500
+            };
 
-            var result = new ObjectResult(new { error = "An unexpected error occurred." })
+            var result = new ObjectResult(errorResponse)
             {
                 StatusCode = 500
             };

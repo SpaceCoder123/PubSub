@@ -822,6 +822,20 @@
           }
         }
       },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper": "13.0.1",
+          "Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2315,6 +2329,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
+    },
     "Entities/1.0.0": {
       "type": "project",
       "path": "../Entities/Entities.csproj",
@@ -2329,6 +2348,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "AutoMapper >= 13.0.1",
+      "Common >= 1.0.0",
       "Entities >= 1.0.0",
       "Newtonsoft.Json >= 13.0.3",
       "RepositoryLayer >= 1.0.0"
@@ -2367,6 +2387,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "E:\\PubSub\\Solution\\PubSub\\Common\\Common.csproj": {
+              "projectPath": "E:\\PubSub\\Solution\\PubSub\\Common\\Common.csproj"
+            },
             "E:\\PubSub\\Solution\\PubSub\\Entities\\Entities.csproj": {
               "projectPath": "E:\\PubSub\\Solution\\PubSub\\Entities\\Entities.csproj"
             },

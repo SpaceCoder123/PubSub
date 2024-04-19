@@ -35,5 +35,17 @@ namespace Services
             };
             return await _auditRepository.AddAudit(audit); ;
         }
+
+        public async Task<bool> InsertMediaAudit(RecieveMediaDTO mediaSongDTO, string auditType)
+        {
+            var audit = new Audit
+            {
+                TransactionId = mediaSongDTO.TransactionId.ToString(),
+                AuditType = auditType,
+                Code = 200,
+                Payload = JsonConvert.SerializeObject(mediaSongDTO)
+            };
+            return await _auditRepository.AddAudit(audit); ;
+        }
     }
 }

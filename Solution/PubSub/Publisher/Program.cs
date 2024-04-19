@@ -19,7 +19,7 @@ namespace Publisher
                 c.SwaggerDoc("v1", new() { Title = "Publisher API", Version = "v1" });
             });
             builder.Services.AddScoped<PublisherExceptionFilter>();
-            builder.Services.AddSingleton<DbConnectionLayer>();
+            builder.Services.AddTransient<DbConnectionLayer>();
             builder.Services.AddTransient<IPublisherRepository, PublisherRepository>();
             builder.Services.AddTransient<IPublisherService, PublisherService>();
             builder.Services.AddTransient<IAuditRepository, AuditRepository>();

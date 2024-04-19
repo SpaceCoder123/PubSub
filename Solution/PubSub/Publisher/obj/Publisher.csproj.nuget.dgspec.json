@@ -331,6 +331,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "E:\\PubSub\\Solution\\PubSub\\Common\\Common.csproj": {
+                "projectPath": "E:\\PubSub\\Solution\\PubSub\\Common\\Common.csproj"
+              },
               "E:\\PubSub\\Solution\\PubSub\\Entities\\Entities.csproj": {
                 "projectPath": "E:\\PubSub\\Solution\\PubSub\\Entities\\Entities.csproj"
               },

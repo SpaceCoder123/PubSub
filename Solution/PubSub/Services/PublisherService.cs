@@ -1,7 +1,4 @@
-﻿
-using AutoMapper;
-using Entities;
-using RepositoryLayer.Interfaces;
+﻿using RepositoryLayer.Interfaces;
 using Services.Interfaces;
 
 namespace Services
@@ -16,10 +13,10 @@ namespace Services
             _auditService = auditService;
         }
 
-        public async Task<bool> InsertPlayableMedia(MediaSongDTO mediaSongDTO)
-        {
-            await _auditService.InsertMediaAudit(mediaSongDTO, "ProcessingInPublisher");
-            return await _publisherRepository.InsertSong(mediaSongDTO);
-        }
+        //public async Task<bool> InsertPlayableMedia(MediaSongDTO mediaSongDTO)
+        //{
+        //    await _auditService.InsertMediaAudit(mediaSongDTO, EventTypes.SubscriberDataProcessing);
+        //    return await _publisherRepository.InsertSong(mediaSongDTO);
+        //}
     }
 }

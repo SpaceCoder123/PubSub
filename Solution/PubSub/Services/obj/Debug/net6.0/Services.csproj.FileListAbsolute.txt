@@ -15,3 +15,5 @@ E:\PubSub\Solution\PubSub\Services\obj\Debug\net6.0\Services.dll
 E:\PubSub\Solution\PubSub\Services\obj\Debug\net6.0\refint\Services.dll
 E:\PubSub\Solution\PubSub\Services\obj\Debug\net6.0\Services.pdb
 E:\PubSub\Solution\PubSub\Services\obj\Debug\net6.0\ref\Services.dll
+E:\PubSub\Solution\PubSub\Services\bin\Debug\net6.0\Common.dll
+E:\PubSub\Solution\PubSub\Services\bin\Debug\net6.0\Common.pdb

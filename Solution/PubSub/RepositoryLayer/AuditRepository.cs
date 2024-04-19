@@ -29,7 +29,7 @@ namespace RepositoryLayer
 
                 connection.Open();
                 await connection.ExecuteAsync("[dbo].[pubSub_InsertAuditRecord]", parameters, commandType: CommandType.StoredProcedure);
-                int rowCountChange = parameters.Get<int>("RowCount");   
+                int rowCountChange = parameters.Get<int>("RowCount");
                 connection.Close();
                 return rowCountChange > 0;
             }

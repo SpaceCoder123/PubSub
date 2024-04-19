@@ -973,6 +973,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "13.0.1",
+          "Common": "1.0.0",
           "Entities": "1.0.0",
           "Newtonsoft.Json": "13.0.3",
           "RepositoryLayer": "1.0.0"

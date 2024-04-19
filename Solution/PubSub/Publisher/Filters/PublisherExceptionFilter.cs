@@ -18,7 +18,7 @@ public class PublisherExceptionFilter : IExceptionFilter
         _logger.LogError(context.Exception, "An unhandled exception occurred.");
         string headerMessage = context.HttpContext.Request.Headers["TransactionId"].ToString();
         string StackTrace = context.Exception.StackTrace;
-        
+
         var errorResponse = new
         {
             error = "An unexpected error occurred.",
@@ -26,12 +26,12 @@ public class PublisherExceptionFilter : IExceptionFilter
             stackTrace = StackTrace
         };
 
-        if(!string.IsNullOrEmpty(StackTrace))
+        if (!string.IsNullOrEmpty(StackTrace))
         {
-           _auditService.InsertExceptionAudit(StackTrace, headerMessage, "ErrorPublisher");
+            _auditService.InsertExceptionAudit(StackTrace, headerMessage, "ErrorPublisher");
         }
-        
-        var result = new ObjectResult(errorResponse)    
+
+        var result = new ObjectResult(errorResponse)
         {
             StatusCode = 500
         };

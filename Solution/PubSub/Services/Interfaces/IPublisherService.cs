@@ -4,6 +4,6 @@ namespace Services.Interfaces
 {
     public interface IPublisherService
     {
-        public Task<bool> InsertPlayableMedia(MediaSongDTO mediaSongDTO);
+        //public Task<bool> InsertPlayableMedia(MediaSongDTO mediaSongDTO);
     }
 }

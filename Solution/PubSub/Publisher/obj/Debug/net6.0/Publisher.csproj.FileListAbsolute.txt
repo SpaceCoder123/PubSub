@@ -88,3 +88,4 @@ E:\PubSub\Solution\PubSub\Publisher\obj\Debug\net6.0\refint\Publisher.dll
 E:\PubSub\Solution\PubSub\Publisher\obj\Debug\net6.0\Publisher.pdb
 E:\PubSub\Solution\PubSub\Publisher\obj\Debug\net6.0\Publisher.genruntimeconfig.cache
 E:\PubSub\Solution\PubSub\Publisher\obj\Debug\net6.0\ref\Publisher.dll
+E:\PubSub\Solution\PubSub\Publisher\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
