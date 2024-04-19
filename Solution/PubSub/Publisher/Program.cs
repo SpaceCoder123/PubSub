@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using RepositoryLayer;
 using RepositoryLayer.Interfaces;
 using Services;
 using Services.Interfaces;
+using System.Text;
 
 namespace Publisher
 {
@@ -25,11 +27,29 @@ namespace Publisher
 
             builder.Services.AddAutoMapper(typeof(Program));
 
+            #region Authentication 
+            builder.Services.AddAuthentication(X =>
+            {
+                X.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                X.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                X.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x => x.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+            {
+                ValidIssuer = "",
+                ValidAudience = "",
+                IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(Encoding.UTF8.GetBytes("Hey this is my key")),
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true
+            });
+            #endregion
+
             var app = builder.Build();
 
             app.UseHttpsRedirection();
             app.UseAuthorization();
-
+            app.UseAuthentication();
             app.UseCors(options =>
             {
                 options.WithOrigins("https://pubsubclient.azurewebsites.net", "http://localhost:3000")
@@ -37,7 +57,6 @@ namespace Publisher
                        .AllowAnyHeader()
                        .AllowCredentials();
             });
-
             app.UseExceptionHandler("/publisher/error");
             app.UseSwagger();
             app.UseSwaggerUI(options =>
