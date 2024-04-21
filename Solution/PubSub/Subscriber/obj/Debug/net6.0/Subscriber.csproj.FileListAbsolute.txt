@@ -88,3 +88,8 @@ E:\PubSub\Solution\PubSub\Subscriber\obj\Debug\net6.0\refint\Subscriber.dll
 E:\PubSub\Solution\PubSub\Subscriber\obj\Debug\net6.0\Subscriber.pdb
 E:\PubSub\Solution\PubSub\Subscriber\obj\Debug\net6.0\Subscriber.genruntimeconfig.cache
 E:\PubSub\Solution\PubSub\Subscriber\obj\Debug\net6.0\ref\Subscriber.dll
+E:\PubSub\Solution\PubSub\Subscriber\bin\Debug\net6.0\Microsoft.Azure.Amqp.dll
+E:\PubSub\Solution\PubSub\Subscriber\bin\Debug\net6.0\Microsoft.Azure.ServiceBus.dll
+E:\PubSub\Solution\PubSub\Subscriber\bin\Debug\net6.0\Microsoft.Azure.Services.AppAuthentication.dll
+E:\PubSub\Solution\PubSub\Subscriber\bin\Debug\net6.0\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll
+E:\PubSub\Solution\PubSub\Subscriber\bin\Debug\net6.0\Microsoft.IdentityModel.Clients.ActiveDirectory.dll

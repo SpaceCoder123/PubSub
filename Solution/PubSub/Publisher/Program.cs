@@ -18,14 +18,18 @@ namespace Publisher
             {
                 c.SwaggerDoc("v1", new() { Title = "Publisher API", Version = "v1" });
             });
+
+            #region Injections
             builder.Services.AddScoped<PublisherExceptionFilter>();
             builder.Services.AddTransient<DbConnectionLayer>();
             builder.Services.AddTransient<IPublisherRepository, PublisherRepository>();
             builder.Services.AddTransient<IPublisherService, PublisherService>();
             builder.Services.AddTransient<IAuditRepository, AuditRepository>();
             builder.Services.AddTransient<IAuditService, AuditService>();
-
+            builder.Services.AddTransient<ServiceBusConnectionLayer>();
+            builder.Services.AddTransient<IMessageService, MessageService>();
             builder.Services.AddAutoMapper(typeof(Program));
+            #endregion
 
             #region Authentication 
             builder.Services.AddAuthentication(X =>
@@ -50,6 +54,8 @@ namespace Publisher
             app.UseHttpsRedirection();
             app.UseAuthorization();
             app.UseAuthentication();
+
+            #region Cors
             app.UseCors(options =>
             {
                 options.WithOrigins("https://pubsubclient.azurewebsites.net", "http://localhost:3000")
@@ -57,6 +63,8 @@ namespace Publisher
                        .AllowAnyHeader()
                        .AllowCredentials();
             });
+            #endregion
+
             app.UseExceptionHandler("/publisher/error");
             app.UseSwagger();
             app.UseSwaggerUI(options =>

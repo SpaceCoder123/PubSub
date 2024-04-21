@@ -1,22 +1,30 @@
-﻿using RepositoryLayer.Interfaces;
+﻿using Common;
+using Entities;
+using Newtonsoft.Json;
+using RepositoryLayer.Interfaces;
 using Services.Interfaces;
 
 namespace Services
 {
     public class PublisherService : IPublisherService
     {
-        private IPublisherRepository _publisherRepository;
         private IAuditService _auditService;
-        public PublisherService(IPublisherRepository publisherRepository, IAuditService auditService)
+        private IMessageService _messageService;
+        public PublisherService(IAuditService auditService, IMessageService messageService)
         {
-            _publisherRepository = publisherRepository;
             _auditService = auditService;
+            _messageService = messageService;
         }
 
-        //public async Task<bool> InsertPlayableMedia(MediaSongDTO mediaSongDTO)
-        //{
-        //    await _auditService.InsertMediaAudit(mediaSongDTO, EventTypes.SubscriberDataProcessing);
-        //    return await _publisherRepository.InsertSong(mediaSongDTO);
-        //}
+        public async Task<bool> SendPlayableMedia(MediaSongDTO mediaSongDTO)
+        {
+            string mediaSongJSON = JsonConvert.SerializeObject(mediaSongDTO);
+            bool status = await _messageService.SendMessageToQueue("examplequeuename", mediaSongJSON, mediaSongDTO.TransactionId.ToString());
+            if(status)
+                await _auditService.InsertMediaAudit(mediaSongDTO, EventTypes.DataSentToServiceBus);
+            else
+                await _auditService.InsertExceptionAudit("Error in inserting message to service bus", mediaSongDTO.TransactionId.ToString(), EventTypes.DataSentToServiceBus);
+            return true;
+        }
     }
 }
