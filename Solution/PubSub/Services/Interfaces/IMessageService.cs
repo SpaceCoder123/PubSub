@@ -2,6 +2,6 @@
 {
     public interface IMessageService
     {
-        public Task<bool> SendMessageToQueue(string queueName, string messageBody, string TransactionId);
+        public Task<bool> SendMessageToQueue(string messageBody, string TransactionId);
     }
 }

@@ -1,7 +1,6 @@
 ﻿using Common;
 using Entities;
 using Newtonsoft.Json;
-using RepositoryLayer.Interfaces;
 using Services.Interfaces;
 
 namespace Services
@@ -19,7 +18,7 @@ namespace Services
         public async Task<bool> SendPlayableMedia(MediaSongDTO mediaSongDTO)
         {
             string mediaSongJSON = JsonConvert.SerializeObject(mediaSongDTO);
-            bool status = await _messageService.SendMessageToQueue("examplequeuename", mediaSongJSON, mediaSongDTO.TransactionId.ToString());
+            bool status = await _messageService.SendMessageToQueue(mediaSongJSON, mediaSongDTO.TransactionId.ToString());
             if(status)
                 await _auditService.InsertMediaAudit(mediaSongDTO, EventTypes.DataSentToServiceBus);
             else

@@ -1,5 +1,6 @@
 ﻿using Common;
 using Microsoft.Azure.ServiceBus;
+using Microsoft.Extensions.Configuration;
 using RepositoryLayer;
 using Services.Interfaces;
 using System.Text;
@@ -7,14 +8,16 @@ public class MessageService : IMessageService
 {
     private readonly ServiceBusConnectionLayer _serviceBusConnectionLayer;
     private IAuditService _auditService;
+    private readonly string _queueName;
 
-    public MessageService(ServiceBusConnectionLayer serviceBusConnectionLayer)
+    public MessageService(ServiceBusConnectionLayer serviceBusConnectionLayer, IConfiguration configuration)
     {
         _serviceBusConnectionLayer = serviceBusConnectionLayer;
+        _queueName = configuration["QueueName"];
     }
-    public async Task<bool> SendMessageToQueue(string queueName, string messageBody, string TransactionId)
+    public async Task<bool> SendMessageToQueue(string messageBody, string TransactionId)
     {
-        var queueClient = _serviceBusConnectionLayer.CreateQueueClient(queueName);
+        var queueClient = _serviceBusConnectionLayer.CreateQueueClient(_queueName);
 
         try
         {
