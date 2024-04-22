@@ -1,0 +1,12 @@
+export const emailRegex: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+export const phoneNumberRegex: RegExp = /^\+(?:[0-9] ?){6,14}[0-9]$/;
+export const urlRegex: RegExp = /^(ftp|http|https):\/\/[^ "]+$/;
+export const alphanumericRegex: RegExp = /^[a-zA-Z0-9]*$/;
+export const alphaRegex: RegExp = /^[a-zA-Z]*$/;
+export const numericRegex: RegExp = /^[0-9]*$/;
+export const dateRegex: RegExp = /^\d{4}-\d{2}-\d{2}$/;
+export const timeRegex: RegExp = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/;
+export const slugRegex: RegExp = /^[a-z0-9-]+$/;
+export const hexColorRegex: RegExp = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+export const userNameRegex : RegExp = /^[A-z][A-z0-9-_]{3,23}$/;
+export const passwordRegex  : RegExp = /^[A-z][A-z0-9-_]{3,23}$/;

@@ -45,7 +45,19 @@ namespace Services
                 Code = 200,
                 Payload = JsonConvert.SerializeObject(mediaSongDTO)
             };
-            return await _auditRepository.AddAudit(audit); ;
+            return await _auditRepository.AddAudit(audit);
+        }
+
+        public async Task<bool> InsertSubscriberMediaAudit(SubscriberDTO<ArtistDTO> subscriberDTO, string auditType)
+        {
+            var audit = new Audit
+            {
+                TransactionId = subscriberDTO.TransactionId,
+                AuditType = auditType,
+                Code = 200,
+                Payload = JsonConvert.SerializeObject(subscriberDTO.Data)
+            };
+            return await _auditRepository.AddAudit(audit);
         }
     }
 }
