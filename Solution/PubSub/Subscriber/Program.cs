@@ -28,13 +28,6 @@ namespace Subscriber
             // Configure the HTTP request pipeline.
 
             app.UseHttpsRedirection();
-            app.UseCors(options =>
-            {
-                options.WithOrigins("https://pubsubclient.azurewebsites.net", "http://localhost:3000")
-                       .AllowAnyMethod()
-                       .AllowAnyHeader()
-                       .AllowCredentials();
-            });
 
             app.UseAuthorization();
 

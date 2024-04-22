@@ -26,6 +26,7 @@ namespace PubSubAzFunction
             string apiUrl = ConstantsConnections.LocalIISUrl;
             try
             {
+                apiUrl += $"?mediaPayload={myQueueItem}";
                 var response = await _httpClient.PostAsync(apiUrl, new StringContent(myQueueItem, Encoding.UTF8, "application/json"));
 
                 if (response.IsSuccessStatusCode)
@@ -34,7 +35,7 @@ namespace PubSubAzFunction
                 }
                 else
                 {
-                    log.LogError($"HTTP request to ReceiveMedia endpoint failed with status code: {response.StatusCode}");
+                    log.LogError($"HTTP request to ReceiveMedia endpoint failed with status code: {response.StatusCode}, {response.ReasonPhrase}");
                 }
             }
             catch (Exception ex)

@@ -22,7 +22,7 @@ namespace Subscriber.Controllers
         [Route("/api/ReceiveMedia")]
         [HttpPost]
         public async Task<IActionResult> ReceiveMedia(string mediaPayload)
-        {
+            {
             RecieveMediaDTO mediaSongDTO = new RecieveMediaDTO();
             try
             {
