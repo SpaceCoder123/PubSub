@@ -1,0 +1,11 @@
+{
+  "TransactionId": "5d41521a-2df4-450d-945f-f4d6e41090a5",
+  "Title": "Sulthana",
+  "Artist": "Ravi Basrur",
+  "Album": "KGF Chapter 2",
+  "Duration": "00:03:58",
+  "GenreType": "Rock",
+  "ReleaseDate": "2022-05-22T18:48:17.42Z",
+  "CreatedOn": "2024-04-19T18:48:17.42Z",
+  "CreatedBy": "admin"
+}
