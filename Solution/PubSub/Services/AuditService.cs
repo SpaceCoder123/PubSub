@@ -30,7 +30,7 @@ namespace Services
             {
                 TransactionId = TransactionId,
                 AuditType = auditType,
-                Code = 200,
+                Code = 400,
                 Payload = stackTrace
             };
             return await _auditRepository.AddAudit(audit); ;

@@ -10,10 +10,11 @@ public class MessageService : IMessageService
     private IAuditService _auditService;
     private readonly string _queueName;
 
-    public MessageService(ServiceBusConnectionLayer serviceBusConnectionLayer, IConfiguration configuration)
+    public MessageService(ServiceBusConnectionLayer serviceBusConnectionLayer, IConfiguration configuration, IAuditService auditService)
     {
         _serviceBusConnectionLayer = serviceBusConnectionLayer;
         _queueName = configuration["QueueName"];
+        _auditService = auditService;
     }
     public async Task<bool> SendMessageToQueue(string messageBody, string TransactionId)
     {
